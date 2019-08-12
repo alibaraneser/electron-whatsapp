@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Whatsapp Send Multiple Message</title>
+  <link rel="stylesheet" href="../assets/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark" style="background-color:#128c7e !important;border-color:#128c7e">
+    <a class="navbar-brand text-white">Whatsapp</a>
+  </nav>
+  <div class="container main-container mt-3">
+    <div class="todo-container container"></div>
+    <div class="alert-container">
+      <div class="row">
+        <div class="col-md-12">
+          <form>
+<!--            <div class="col-md-12">-->
+<!--              <div class="form-group">-->
+<!--                <label for="exampleInputEmail1">Görsel URL</label>-->
+<!--                <input type="text" class="form-control" id="photo">-->
+<!--              </div>-->
+<!--            </div>-->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Message</label>
+                <textarea name="" class="form-control" id="message" required cols="30" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Phones</label>
+                <textarea name="" class="form-control" id="phoneList" required cols="30" rows="5"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="send">Send</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="col-md-12">
+        <div class="alert alert-warning">
+          Read the QR code within 20 seconds after opening the scanner, otherwise restart the application ...
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <span class="text-right">© Copyright | <a href="">eser.im</a></span>
+  </nav>
+  <script src="../assets/mainWindow.js"></script>
+
+</body>
+
+</html>
