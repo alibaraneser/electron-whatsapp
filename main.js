@@ -2,8 +2,6 @@ const electron = require("electron");
 const url = require("url");
 const path = require("path");
 const webdriver = require('selenium-webdriver')
-const childProcess = require('child_process').execFile
-const executablePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe";
 const http = require('http');
 const fs = require('fs');
 const {app, BrowserWindow, Menu, ipcMain} = electron;
@@ -50,10 +48,10 @@ app.on("ready", () => {
 
         let phoneList = list.split("\n")
 
-        let driver = new webdriver.Builder() //"9515" chrome tarafından açılan port numarası.
+        let driver = new webdriver.Builder()
             .usingServer('http://localhost:9515')
             .withCapabilities({
-                chromeOptions: { //Electron binary dosyasına giden dizin.
+                chromeOptions: {
                     binary: "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
                 }
             })
@@ -61,11 +59,16 @@ app.on("ready", () => {
             .build()
 
         async function processSendMessage(driver, message, phone) {
-            await driver.get('https://api.whatsapp.com/send?phone=' + phone + '&text=' + message);
-            // await sleep(3000);//Maybe not needed!
-            await driver.findElement(webdriver.By.id('action-button')).click();
+            await driver.get('https://web.whatsapp.com/send?phone=' + phone + '&text=' + message);
+            // await driver.findElement(webdriver.By.id('action-button')).click();
             const element = await webdriver.By.xpath("//*[@id='main']/footer/div[1]/div[2]/div/div[2]")
             await driver.wait(webdriver.until.elementLocated(element));
+
+            // const layer = await webdriver.By.xpath("//*[@id='content']/div/div/div/a")
+            // await driver.wait(webdriver.until.elementLocated(layer));
+            // console.log("ok");
+            // await layer.click();
+
             const whatElement = await driver.findElement(element);
             await driver.wait(webdriver.until.elementIsVisible(whatElement)).sendKeys(webdriver.Key.ENTER);
         }

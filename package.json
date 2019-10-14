@@ -1,7 +1,7 @@
 {
   "name": "whatsapp",
   "productName": "Whatsapp Multiple Message Sending",
-  "version": "1.0.1",
+  "version": "1.2",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -10,10 +10,11 @@
   "author": "Ali Baran Eser",
   "license": "ISC",
   "dependencies": {
+    "electron-chromedriver": "^6.0.0",
     "jquery": "^3.4.1",
     "mysql": "^2.16.0",
     "request": "^2.88.0",
-    "selenium-webdriver": "^4.0.0-alpha.1",
+    "selenium-webdriver": "^4.0.0-alpha.5",
     "toastr": "^2.1.4"
   },
   "devDependencies": {
